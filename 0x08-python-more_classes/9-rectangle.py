@@ -152,4 +152,22 @@ class Rectangle:
 
         Args:
             rect_1 (Rectangle): first rectangle.
+            rect_2 (Rectangle): second rectangle.
 
+        Returns:
+            Rectangle: the rectangle with the biggest area else rect_1 if
+            areas are equal
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
+
+        if area_1 >= area_2:
+            return rect_1
+
+        return rect_2
